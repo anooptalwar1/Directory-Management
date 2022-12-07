@@ -1,9 +1,6 @@
 #!/usr/bin/env python3
 
-# Name: Mohitha Narisetty
-# Student ID: 1001699690
 
-import path
 from threading import Thread
 import os, sys
 from handledir import dirmanage, undodir
@@ -12,7 +9,7 @@ from tkinter import *
 from tkinter import messagebox
 from tkinter import filedialog
 from tkinter.ttk import *
-from flask import Flask, flash, request, redirect, Response, render_template, abort, jsonify, send_from_directory, send_file, safe_join, abort
+from flask import Flask, flash, request, redirect, Response, render_template, abort, jsonify, send_from_directory, send_file, abort
 from flask_socketio import SocketIO, ConnectionRefusedError
 
 app = Flask(__name__)
@@ -82,26 +79,26 @@ def list_dir():
         return Response(dirmanage.list_custom_dir(userid))
 
 """ Delete directory tree based on userid """
-@app.route('/app/delete/user', methods=['POST'])
+@app.route('/app/delete/user', methods=['DELETE'])
 def delete_user_dir():
-    if request.method == 'POST':
+    if request.method == 'DELETE':
         content = request.json
         userid = content['userid']
         return Response(dirmanage.delete_user_dir(userid))
 
 """ Delete directory based on userid and project """
-@app.route('/app/delete/projectdir', methods=['POST'])
+@app.route('/app/delete/projectdir', methods=['DELETE'])
 def delete_project_dir():
-    if request.method == 'POST':
+    if request.method == 'DELETE':
         content = request.json
         userid = content['userid']
         project = content['project']
         return Response(dirmanage.delete_user_project_dir(userid, project))
 
 """ Delete directory based on userid and project """
-@app.route('/app/delete/customdir', methods=['POST'])
+@app.route('/app/delete/customdir', methods=['DELETE'])
 def delete_custom_dir():
-    if request.method == 'POST':
+    if request.method == 'DELETE':
         content = request.json
         userid = content['userid']
         project = content['project']
@@ -109,9 +106,9 @@ def delete_custom_dir():
         return Response(dirmanage.delete_custom_dir(userid, project, customdir))
 
 """ Rename directory based on userid and project """
-@app.route('/app/rename/customdir', methods=['POST'])
+@app.route('/app/rename/customdir', methods=['PUT'])
 def rename_customdir():
-    if request.method == 'POST':
+    if request.method == 'PUT':
         content = request.json
         userid = content['userid']
         project = content['project']
