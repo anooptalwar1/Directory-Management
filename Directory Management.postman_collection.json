@@ -1,0 +1,271 @@
+{
+	"info": {
+		"_postman_id": "a0145118-39c3-43af-8a08-f9b159ec3a0d",
+		"name": "Directory Management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10314752"
+	},
+	"item": [
+		{
+			"name": "Create Directory",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "app_id",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"userid\" : \"anoop\",\r\n\"project\" : \"cars\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:6543/app/create/project",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "6543",
+					"path": [
+						"app",
+						"create",
+						"project"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Undo Directory",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "app_id",
+						"type": "text",
+						"value": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"userid\" : \"anoop\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:6543/app/undo/customdir",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "6543",
+					"path": [
+						"app",
+						"undo",
+						"customdir"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Custom Directory",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "app_id",
+						"type": "text",
+						"value": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"userid\" : \"anoop\",\r\n\"project\" : \"cars\",\r\n\"custom\" : \"merc\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:6543/app/create/customdir",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "6543",
+					"path": [
+						"app",
+						"create",
+						"customdir"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Directory",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "app_id",
+						"type": "text",
+						"value": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"userid\" : \"anoop\",\r\n\"project\" : \"cars\",\r\n\"custom\" : \"merc\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:6543/app/delete/projectdir",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "6543",
+					"path": [
+						"app",
+						"delete",
+						"projectdir"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Rename Directory",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "app_id",
+						"type": "text",
+						"value": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"userid\" : \"anoop\",\r\n\"project\" : \"cars\",\r\n\"custom\" : \"bmw\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:6543/app/delete/customdir",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "6543",
+					"path": [
+						"app",
+						"delete",
+						"customdir"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Directory",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "app_id",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"userid\" : \"anoop\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:6543/app/list/customdir",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "6543",
+					"path": [
+						"app",
+						"list",
+						"customdir"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
